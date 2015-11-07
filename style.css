@@ -1,0 +1,11 @@
+#pano{
+	line-height: 1;
+}
+#pano table{
+	border:none;
+	width:auto;
+	margin:0;
+}
+/*#pano table tbody > tr:nth-child(odd) > td, #pano table tbody > tr:nth-child(odd) > th {
+  background-color: transparent;
+}*/

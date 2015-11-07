@@ -1,0 +1,150 @@
+<style>
+div{
+  color: #444;
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.4em;
+}
+.krpanovideo-box {
+	font-size:12px;
+}
+.krpanovideo-label{
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  padding-right: 5px;
+  max-width: 24%;
+}
+textarea,input[type=text] {
+  margin-top: 5px;
+  width: 70%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+  background-color: #fff;
+  color: #32373c;
+  outline: 0;
+  -webkit-transition: .05s border-color ease-in-out;
+  transition: .05s border-color ease-in-out;
+  font-size:14px;
+  padding: 3px 5px;
+}
+textarea:focus,input[type=text]:focus{
+  border-color: #5b9dd9;
+  -webkit-box-shadow: 0 0 2px rgba(30,140,190,.8);
+  box-shadow: 0 0 2px rgba(30,140,190,.8);
+}
+
+.submitbox {
+  padding: 8px 16px;
+  background: #fcfcfc;
+  border-top: 1px solid #dfdfdf;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#krpanovideo-cancel {
+  line-height: 25px;
+  float: left;
+  font-size: 13px;
+}
+.submitbox .submitdelete {
+  text-decoration: none;
+  padding: 1px 2px;
+  color: #a00;
+}
+.submitbox .submitdelete:hover{
+  color: red;
+  text-decoration: none;
+  border: none;
+}
+#krpanovideo-update {
+  line-height: 23px;
+  float: right;
+}
+#krpanovideo-submit {
+  float: right;
+  margin-bottom: 0;
+}
+.button {
+  vertical-align: top;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 26px;
+  height: 28px;
+  margin: 0;
+  padding: 0 10px 1px;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-appearance: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.button-primary {
+  background: #00a0d2;
+  border-color: #0073aa;
+  -webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
+  box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
+  color: #fff;
+  text-decoration: none;
+}
+.howto{
+  margin: 3px 0;
+}
+</style>
+<script type="text/javascript">
+    function InsertValue() {
+        var posterurl_ios = document.getElementById('krpanovideo_1024_cover').value;
+        var videourl_ios = document.getElementById('krpanovideo_1024').value;
+        var posterurl_no_ios = document.getElementById('krpanovideo_1920_cover').value;
+        var videourl_no_ios = document.getElementById('krpanovideo_1920').value;
+        var title = document.getElementById('krpanovideo_title').value;
+
+        var code = '[krpanovideo ioscover="'+posterurl_ios+'" iosvideo="'+videourl_ios+'" noioscover="'+posterurl_no_ios+' " noiosvideo="'+videourl_no_ios+'"]'+title+'[/krpanovideo]';
+        window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', false, code); 
+        window.parent.tinyMCE.activeEditor.windowManager.close(); 
+    }
+</script>
+<form onsubmit="InsertValue();return false;">
+<div class="krpanovideo-box">
+  <div>
+    <label class="krpanovideo-label">Title:</label>
+    <input id="krpanovideo_title" class="krpanovideo-textfield" type="text" />
+  </div>
+  <h3>1920x960</h3>
+	<div>
+		<label class="krpanovideo-label">video:</label>
+		<input id="krpanovideo_1920" class="krpanovideo-textfield" type="text" />
+	</div>
+  <div>
+    <label class="krpanovideo-label">coverimage:</label>
+    <input type="text" id="krpanovideo_1920_cover" class="krpanovideo-textfield" />
+  </div>
+  <h3>1024x512</h3>
+	<div>
+		<label class="krpanovideo-label">video:</label>
+		<input id="krpanovideo_1024" class="krpanovideo-textfield" type="text" />
+	</div>
+    <div>
+    <label class="krpanovideo-label">coverimage:</label>
+    <input type="text" id="krpanovideo_1024_cover" class="krpanovideo-textfield" />
+  </div>
+</div>
+	<div class="submitbox">
+			<div id="krpanovideo-cancel">
+				<a class="submitdelete deletion" href="#">Cancel</a>
+			</div>
+			<div id="krpanovideo-update">
+				<input type="submit" value="Insert" class="button button-primary" id="krpanovideo-submit" name="krpanovideo-submit">
+
+</div>
+</form>

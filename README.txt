@@ -2,7 +2,7 @@
 Contributors: Yuki Cheung
 Tags: Panoramic Video, Krpano, Wordpress plugin
 Requires at least: 4.3.1
-
+Plugin URI: http://szeching.com/krpano-video-embed-wordpress-plugin/
 
 == Description ==
 

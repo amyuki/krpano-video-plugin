@@ -1,6 +1,7 @@
 <?php
 /*
 Plugin Name: Krpano Video Embed
+Plugin URI: http://szeching.com/krpano-video-embed-wordpress-plugin/
 Description: Embed a 360 degree video to post/page with krpano.
 Version:  1.0
 Author: Yuki Cheung

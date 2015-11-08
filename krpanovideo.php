@@ -56,11 +56,11 @@ function krpanovideo_function($atts,$content){
 	        url.flash="%SWFPATH%/plugins/videoplayer.swf"
 	        url.html5="%SWFPATH%/plugins/videoplayer.js"
 
-	        posterurl.ios="%SWFPATH%/video/video-1024x512-poster.jpg"
-	        videourl.ios="%SWFPATH%/video/video-1024x512.mp4"
+	        posterurl.ios="%SWFPATH%/video/'.$ioscover.'"
+	        videourl.ios="%SWFPATH%/video/'.$iosvideo.'"
 
-	        posterurl.no-ios="%SWFPATH%/video/video-1920x960-poster.jpg"
-	        videourl.no-ios="%SWFPATH%/video/video-1920x960.mp4"
+	        posterurl.no-ios="%SWFPATH%/video/'.$noioscover.'"
+	        videourl.no-ios="%SWFPATH%/video/'.$noiosvideo.'"
 
 	        pausedonstart="true"
 	        loop="true"
@@ -79,8 +79,8 @@ function krpanovideo_function($atts,$content){
 	<action name="setup_video_controls">
 		<!-- add  items to the control menu of the videointerface skin -->
 		videointerface_addmenuitem(configmenu, vqtitle, \'Select Video Quality\', true, videointerface_toggle_configmenu() );
-		videointerface_addmenuitem(configmenu, q1, \'1024x512\',  false, change_video_file(q1, \'%SWFPATH%/video/video-1024x512.mp4\'); );
-		videointerface_addmenuitem(configmenu, q2, \'1920x960\',  false, change_video_file(q2, \'%SWFPATH%/video/video-1920x960.mp4\'); );
+		videointerface_addmenuitem(configmenu, q1, \'1024x512\',  false, change_video_file(q1, \'%SWFPATH%/video/'.$iosvideo.'\'); );
+		videointerface_addmenuitem(configmenu, q2, \'1920x960\',  false, change_video_file(q2, \'%SWFPATH%/video/'.$noiosvideo.'\'); );
 
 		<!-- select/mark the current video (see the initial videourl attribute) -->
 		if(device.ios,
